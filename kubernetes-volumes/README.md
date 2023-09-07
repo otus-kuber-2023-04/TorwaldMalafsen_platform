@@ -37,9 +37,7 @@ kubectl describe pod/minio-0
 ```
 kubectl apply -f minio-secrets.yaml
 kubectl get secrets
-kubectl apply -f minio-statefulset.yaml
 ```
-
 
 ## PR checklist:
 ---
