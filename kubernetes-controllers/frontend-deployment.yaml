@@ -35,7 +35,7 @@ spec:
         - name: AD_SERVICE_ADDR
           value: "adservice:9555"
         readinessProbe:
-          initialDelaySeconds: 10
+          initialDelaySeconds: 11
           httpGet:
             path: "/_healthz"
             port: 8080
