@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: torwaldmalafsen/otus_paymentservice:0.0.1
+        image: torwaldmalafsen/otus_paymentservice:0.0.2
         env:
           - name: PORT
             value: "50051"
