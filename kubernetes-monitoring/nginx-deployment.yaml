@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-app
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 100%
+      maxSurge: 0%
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+      - name: nginx-app
+        image: torwaldmalafsen/otus_kuber_nginx:1.1.9
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /index.html
+            port: 8080
